@@ -14,6 +14,7 @@ public class CredentialService {
 	}
 
 	public String generatePassword() {
+		String fullpassword = "";
 		String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String smallLetters = "abcdefghijklmnopqrstuvwxyz";
 		String numbers = "0123456789";
@@ -25,8 +26,9 @@ public class CredentialService {
 		
 		for (int i=0; i<8;i++) {
 		password[i]=values.charAt(random.nextInt(values.length()));
+		fullpassword = fullpassword + password[i];
 		}
-		return password.toString();
+		return fullpassword;
 	}
 	
 	public void showCredentials(String email, String password) {
