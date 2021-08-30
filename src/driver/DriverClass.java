@@ -5,7 +5,7 @@ import java.util.Scanner;
 import model.Department;
 import model.Employee;
 import service.CredentialService;
-
+import java.util.InputMismatchException;
 public class DriverClass {
 
 	public static void main(String[] args) {
@@ -17,6 +17,8 @@ public class DriverClass {
 		Scanner scanner = new Scanner(System.in);
 		Department department = new Department();
 		CredentialService credentialservice = new CredentialService();
+		
+		try {
 		int choice = scanner.nextInt();
 
 		switch (choice) {
@@ -44,9 +46,15 @@ public class DriverClass {
 			String password4 = credentialservice.generatePassword();
 			credentialservice.showCredentials(email4, password4);
 			break;
-		default:System.out.println("You IDIOT!\nPlease choose from the given options.");
+		default:
+			System.out.println("OMG!!!\nPlease choose from the given options.");
 
 		}
+		}
+		catch (InputMismatchException e) {
+			System.out.println("You IDIOT!\nPlease enter number");
+		}
+		
 
 		scanner.close();
 	}
