@@ -44,6 +44,7 @@ public class DriverClass {
 			String password4 = credentialservice.generatePassword();
 			credentialservice.showCredentials(email4, password4);
 			break;
+		default:System.out.println("You IDIOT!\nPlease choose from the given options.");
 
 		}
 
